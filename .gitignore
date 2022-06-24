@@ -1,2 +1,3 @@
 db.sqlite3
 Media_Files/
+__pycache__/

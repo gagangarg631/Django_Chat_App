@@ -65,9 +65,7 @@ class ChatConsumer(WebsocketConsumer):
             '_from': _from,
             'message': msg,
             'images': images
-
         }
-        
         self.send(text_data=json.dumps(_obj))
 
 

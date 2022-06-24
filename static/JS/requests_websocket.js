@@ -1,6 +1,6 @@
 import util from './util.js'
 
-let notification_bell = document.getElementById('notification_open');
+let notification_open_panel = document.getElementById('notification_open');
 
 
 const skt = new WebSocket(
@@ -12,13 +12,13 @@ const skt = new WebSocket(
 let receive_request = function(data){
     let _from = data['_from']
     let message = data['message']
-    notification_bell.appendChild(util.getRequestCardElement(_from,message));
+    notification_open_panel.appendChild(util.getRequestCardElement(_from,message));
 }
 
 let request_accepted = function(data){
     let _by = data['_by']
     let message = data['message']
-    notification_bell.appendChild(util.getRequestAcceptedCardElement(message));
+    notification_open_panel.appendChild(util.getRequestAcceptedCardElement(message));
 }
 
 let incoming_notifications = function(data){
@@ -26,7 +26,7 @@ let incoming_notifications = function(data){
     let requests_from = Array.from(data['incoming_requests_from'])
     for (let i = 0;i < requests_messages.length;i++){
 
-        notification_bell.appendChild(util.getRequestCardElement(requests_from[i],requests_messages[i]))
+        notification_open_panel.appendChild(util.getRequestCardElement(requests_from[i],requests_messages[i]))
     }
 }
 

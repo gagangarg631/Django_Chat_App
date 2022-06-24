@@ -10,8 +10,10 @@
 
     <div class="side_bar gbd wh-wrap bdr40" style="height: 95%;width: 7%;margin: auto;">
         <div id="my_profile_button" style="height: 75px;" class="flex-all">
-            <div class="user-card-pic wh-wrap" style="height: 90%;border-radius: 100%;overflow: hidden;">   
-                <img src="{% static 'Images/g2.jpg' %}" style="height: 100%;" alt="">
+            <div class="user-card-pic wh-wrap" style="height: 90%;overflow: hidden;">   
+                <!-- <img src="{% static 'Images/g2.jpg' %}" style="height: 100%;" alt=""> -->
+                <p style="font-size: 20px;font-weight: bold;color: white;">{{ username | capfirst }}</p>
+                <a style="font-size: 15px;font-weight: bold;color: white;text-decoration: none;" href="{% url 'logout' %}">Logout</a>
             </div>
         </div>
         <ul id="side_bar_list" class="wbd flex-all" style="width: 100%;height: 300px;margin: 100px 0;flex-direction: column;">
@@ -22,7 +24,7 @@
         </ul>
     </div>
 
-    <div id="notification_open" class="wbd bdr20" style="width: 260px;height: 100%;z-index: 10;position: absolute;left: 79px;background-color: gray;visibility: hidden;">
+    <div id="notification_open" class="wbd bdr20" style="width: 260px;height: 100%;z-index: 10;position: absolute;left: 79px;background-color: rgb(119, 119, 224);visibility: hidden;">
         
     </div>
 
@@ -30,7 +32,7 @@
         
         <div id="friends_list" class="bd wh-wrap bdr40" style="height: 100%;background-color: white;display: flex;flex-direction: column;align-items: center;">
             
-            <div id="create_new" class="gbd wh-wrap flex-all" style="width: 85%;height:10%;border-radius: 30px;border: 2px dashed black;">
+            <div id="create_new" class="gbd wh-wrap flex-all" style="width: 85%;height:10%;border-radius: 30px;border: 1px solid black;">
                 <input type="text" placeholder="Create New" name="username" id="user_to_req" style="width: 70%;
                 margin: 0 5px;
                 height: 80%;
@@ -50,8 +52,8 @@
                         <img src="{% static 'Images/g2.jpg' %}" style="height: 100%;" alt="">
                     </div>
                     <div class="user-card-username wh-wrap" style="width: 70%;font-size: 18px;padding-left: 7px;">
-                        <p class="friend-card-username">{{ item.username }}</p>   
-                        <p class="friend-card-active_time">25 min ago</p>
+                        <p class="friend-card-username">{{ item.username | capfirst }}</p>   
+                        <!-- <p class="friend-card-active_time">25 min ago</p> -->
                     </div>
                 </div>
                 {% endfor %}
@@ -59,7 +61,7 @@
            
         </div>
         
-        <div class="bd wh-wrap bdr40" id="friend_chat_open" style="height: 100%;visibility: hidden;">
+        <div class="bd wh-wrap bdr40" id="friend_chat_open" style="height: 100%;width: 100%;visibility: hidden;">
             
 
             <div id="friend-profile-icon" class="blbd fw flex-all" style="height: 10%;width: 96%;margin: auto;">

@@ -21,6 +21,13 @@
 #send_button, #emoji_input, #file_input, #connect_button, #my_profile_button:hover{
     cursor: pointer;
 }
+.friend_card{
+    border-radius: 40px;
+    overflow: hidden;
+}
+.friend_card:hover{
+    background-color: rgb(119, 119, 224);
+}
 
 @media screen and (max-width: 500px) {
     #friend_chat_open{

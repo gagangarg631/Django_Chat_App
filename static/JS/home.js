@@ -96,7 +96,6 @@ window.openChat = openChat;
 let showNotifications = function(){
     let panel = document.getElementById('notification_open');
     panel.style.visibility == 'hidden' ? panel.style.visibility = 'visible' : panel.style.visibility = 'hidden';
-
     
 }
 window.showNotifications = showNotifications;

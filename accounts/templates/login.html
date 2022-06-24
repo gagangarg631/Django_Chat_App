@@ -1,13 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="" method="post" id="login_form">
+    <form action="" method="post" id="login_form" style="width: 30%;margin: 20vh auto;border: 2px solid black;border-radius: 20px;padding: 20px;;">
         {% csrf_token %}
-        <input type="text" placeholder="username" name="username" id="username_input">
-        <input type="password" name="password" id="password_input">
-        <input type="submit" value="login">
-        <a href="{% url 'register' %}">Create Account</a>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" name="username" id="username_input" placeholder="Username">
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="password" class="form-control" name="password" id="password_input" placeholder="Password">
+      </div>
+
+      <div class="input-group mb-3">
+          <button type="submit" class="btn btn-success" style="margin: auto;">Login</button>
+      </div>
+
+      <div class="input-group mb-3">
+          <a href="{% url 'register' %}" style="margin: auto;">Create Account</a>
+      </div>
+
     </form>
+
 {% endblock %}
 
 
